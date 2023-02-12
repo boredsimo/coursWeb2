@@ -35,7 +35,7 @@ public interface UtilisateurDao {
 
     boolean create(Utilisateur utilisateur);
 
-    boolean create(Utilisateur utilisateur, String nomRol);
+    boolean create(Utilisateur utilisateur, String nomRole);
 
     boolean update(Utilisateur utilisateur);
 
