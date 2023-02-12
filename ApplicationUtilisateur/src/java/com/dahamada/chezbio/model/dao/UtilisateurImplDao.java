@@ -21,6 +21,8 @@ import java.util.logging.Logger;
  */
 public class UtilisateurImplDao implements UtilisateurDao{
    private static final String SQL_SELECT_UTILISATEURS = "select * from utilisateurs";
+   private static final String SQL_SELECT_UTILISATEUR_PAR_NOM = "select * from utilisateurs where nom = ?";
+  private static final String SQL_INSERT_UTILISATEUR = "insert into utilisateurs(email,active,nom,prenom,password, photo) value(?,?,?,?,?,?)";
 
     @Override
     public List<Utilisateur> findAll() {
@@ -58,12 +60,68 @@ public class UtilisateurImplDao implements UtilisateurDao{
     } 
   @Override
     public Utilisateur findByName(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          Utilisateur utilisateur = null;
+        try {
+
+            //Initialise la requête préparée basée sur la connexion
+            // la requête SQL passé en argument pour construire l'objet preparedStatement
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_SELECT_UTILISATEUR_PAR_NOM);
+            // on initialise la propriété nom du bean avec sa premiere valeur
+            ps.setString(1, nom);
+            //On execute la requête et on récupère les résultats dans la requête 
+            // dans ResultSet
+            ResultSet result = ps.executeQuery();
+
+            //// la méthode next() pour se déplacer sur l'enregistrement suivant
+            //on parcours ligne par ligne les résultas retournés
+            while (result.next()) {
+                utilisateur = new Utilisateur();
+                utilisateur.setId(result.getInt("id"));
+                utilisateur.setEmail(result.getString("email"));
+                utilisateur.setActive(result.getBoolean("active"));
+                utilisateur.setNom(result.getString("nom"));
+                utilisateur.setPrenom(result.getString("prenom"));
+                utilisateur.setPassword(result.getString("password"));
+                utilisateur.setPhoto(result.getString("photo"));
+
+            };
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //Fermeture de toutes les ressources ouvertes
+        ConnexionBD.closeConnection();
+        return utilisateur;
     }
 
     @Override
     public boolean create(Utilisateur utilisateur) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            boolean retour = false;
+        int nbLigne = 0;
+        PreparedStatement ps;
+
+        try {
+            ps = ConnexionBD.getConnection().prepareStatement(SQL_INSERT_UTILISATEUR);
+            //   Insérer les données dans la table parente, utilisateurs
+            ps.setString(1, utilisateur.getEmail());
+            ps.setBoolean(2, utilisateur.isActive());
+            ps.setString(3, utilisateur.getNom());
+            ps.setString(4, utilisateur.getPrenom());
+
+            ps.setString(5, utilisateur.getPassword());
+            ps.setString(6, utilisateur.getPhoto());
+            nbLigne = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            Logger.getLogger(UtilisateurImplDao.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+//		System.out.println("nb ligne " + nbLigne);
+        if (nbLigne > 0) {
+            retour = true;
+        }
+        ConnexionBD.closeConnection();
+        return retour;
     }
 
     @Override
