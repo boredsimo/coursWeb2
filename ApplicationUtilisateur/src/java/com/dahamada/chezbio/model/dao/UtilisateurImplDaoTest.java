@@ -18,8 +18,10 @@ public class UtilisateurImplDaoTest {
 
     public static void main(String[] args) {
     testFindAll();
-     testFindByName();
+    testFindByName();
      testCreate();
+    testCreate_Utilisateur_Role();
+    testDelete();
       testFindAll();
       
     }
@@ -73,6 +75,62 @@ public class UtilisateurImplDaoTest {
             System.out.println("insertion reussite");
         } else {
             System.out.println("insertion echec ");
+        }
+
+    }
+   public static void testCreate_Utilisateur_Role() {
+        System.out.println("create role");
+        Utilisateur utilisateur = null;
+      //  Role role = null;
+        UtilisateurImplDao instance = new UtilisateurImplDao();
+        
+         Scanner lectureClavier = new Scanner(System.in);
+        System.out.println("Entrez email ");
+        String email = lectureClavier.next();
+        System.out.println("L'utilisateur est-il actif(oui/non)?");
+        String reponse = lectureClavier.next();
+        boolean active = reponse.equals("oui") ? true : false;
+
+        System.out.println("Entrez le nom de l'utilisateur");
+        String nom = lectureClavier.next();
+        System.out.println("Entrez le prenom ");
+        String prenom = lectureClavier.next();
+        System.out.println("Entrez password");
+        String password = lectureClavier.next();
+        System.out.println("Entrez la photo");
+        String photo = lectureClavier.next();
+        utilisateur = new Utilisateur(email, active, nom, prenom, password, photo);
+         //ajouter du role
+        System.out.println("Quel est le role de " + nom + " " + prenom + " ? ");
+        //   System.out.println("Entrez l'ide l'utilisateur : ");
+     
+      //  int id = lectureClavier.nextInt();
+        System.out.println("Choisir entre admin, vendeur, editeur, expediteur et assistant");
+        String roleUtilisateur = lectureClavier.next();
+        String userRole = roleUtilisateur.toLowerCase();
+   
+        boolean result = instance.create(utilisateur, userRole);
+          if (result) {
+            System.out.println("L'utilisateur est mis à jour ");
+        } else {
+            System.out.println("Echec de mis à jour ");
+        }
+        
+       
+    }
+
+  public static void testDelete() {
+        System.out.println("delete");
+        int id = 0;
+        UtilisateurImplDao instance = new UtilisateurImplDao();
+        System.out.println("Entrez l'ide l'utilisateur : ");
+        Scanner lectureClavier = new Scanner(System.in);
+        id = lectureClavier.nextInt();
+        boolean result = instance.delete(id);
+        if (result) {
+            System.out.println("l'utilisateur dont l'id est " + id + " est supprimé de la base des données");
+        } else {
+            System.out.println("l'utilisateur dont l'id est " + id + " n'existe de la base des données");
         }
 
     }
