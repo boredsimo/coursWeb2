@@ -1,0 +1,240 @@
+@CHARSET "UTF-8";
+/* ------------- Étape #1 : Gestion des balises générales (ne pas modifier cette section) -------------- */
+/*  Partie obligatoire, à ne pas modifier
+Cibler tout dans la page HTML
+ toutes les balises auront la famille de police mentionné ci */
+* {
+    margin: 1px;
+    padding: 0;
+    font-family: serif, sans-serif, cursive, fantasy, monospace, Times New Roman,Times, serif;
+}
+
+/* --------- Étape #2 : Gestion des couleurs (ne pas modifier cette section) ----------- */
+:root{
+    --blanc:#fff;
+    --bleuFonce:#3B4494;
+    --rouge: #eb1f4b;
+  
+}
+
+
+/* ------------ Étape #3 :  banniere et ses enfants ---------------------------- */
+/* La bannière du site est 60px de hauteur avec une marge interne à 20px  et la couleur
+de l'arrière plan est blanc '*/
+.banniere {
+    height: 60px;
+    padding:20px;
+    background-color:var(--blanc);
+  
+}
+/*les images dans la banniere sont à hauteur de 70px   */
+.banniere > img {
+    height: 70px;
+}
+/*l'image logo est aligné à gauche grâce à la propriété float alors que l'image departement informatique est aligné à droite  */
+#logo {
+    float: left;
+}
+#informatique {
+    float: right;
+}
+
+/* -----------Étape #4 : Gestion des balises titres à completer -------------- */
+/* le titre h1 est à hauteur 70px , l'arrière plan est rouge, la couleur du texte est blanc
+ la largeur est 60%, le texte centrer avec une marge extérieur auto*/
+h1{
+    background-color:var(--rouge); 
+    height: 70px;
+    color:var(--blanc);
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+/*le titre h2 est centre  */
+h2{
+   text-align: center; 
+}
+/*--------------------Étape #5 : menu de navigation et ses enfants------------------------------------------------------------------------- */
+/*l'arrière plan du menu navigation est bleu foncé */
+nav {
+    background-color:var(--bleuFonce);  
+
+
+}
+/*Le menu est affiché horisontale, avec une largeur de 160px, la couleur du texte est blanc, la marge intérieur est 10px
+ le texte est centré */
+nav ul li{
+    display: inline-block;
+    width: 160px;
+
+    color:var(--blanc);
+ 
+    padding:10px;
+    text-align: center;
+
+}
+/* Quand on survole la souris sur menu, l'arrière plan change en rouge avec une bordure d'epaisseur 1px type solid
+et de couleur #eb1f4b, le bordure est arrondi à 10px, la couleur du text est blanc
+le curseur de la souris est pointé, la marge intérieur est 11px*/
+nav ul li:hover{
+
+    background-color:var(--rouge);  
+    border: 1px solid #eb1f4b;
+    border-radius: 10px;
+    color: var(--blanc);
+    cursor: pointer;
+    white-space: normal;
+    padding: 11px;
+}
+/*la couleur du texte hyperlien est blanc, le texte est non décoré, 
+il devient surligné seulement quand on passe la souris "*/
+nav ul li a{
+    color: var(--blanc);
+    text-decoration:  none;	
+}
+
+nav ul li a:hover{
+
+    color: var(--blanc);
+    text-decoration: underline;	
+}
+/*Aucun style n'est appliqué pour le menu'  */
+
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration:  none;	
+    list-style: none;
+}
+/* ------------ Étape #5 : zone centrale et ses enfants --------------------------------------- */
+/*la section principale, contient un image  informatique_prog.jpg en arrière plan
+l'image ne se repete pas, avec la propriété background-attachment: fixed et  background-size: cover;
+la largeur est 100%, la hauteur est 900px, avec marge extérieur en bas de 10px.
+'*/
+.centrale{
+    background-image: url("../images/informatique_prog.jpg");
+  background-repeat: no-repeat;
+   background-attachment: fixed;
+    width: 100%;
+    height: 900px;
+    margin-bottom:10px;
+    background-size: cover;
+}
+
+/* ------------ Étape #6 : zone pied --------------------------------------- */
+/* Le pied est hauteur de 50px, l'arrière plan est bleu foncé, la couleur du texte est blanc
+position : relative; bottomm: 0; left:0; right: 0 ;' */
+.foot{	
+height: 50px;
+ background-color:var(--bleuFonce);  
+ color: var(--blanc);
+border-color:#080808;
+position: relative;
+bottom: 0;
+left: 0; 
+right: 0;
+
+} 
+/* ------------- Étape #7 : Zone de recherche -------------- */
+/*La div est a gauche est aligné à gauche grace à la propriété float avec une largeur de 30% */
+div.gauche{
+
+    float:left;
+    width: 30%;
+
+}
+/*La div est au centré est aligné à gauche  après la div gauche grace à la propriété float avec une largeur de 40% */
+div.center{
+    float:left;
+    width: 40%;
+
+}
+/*La div est à droite est aligné à gauche  après la div centre grace à la propriété float avec une largeur de 20% 
+et marge extérieure à droite 100px*/
+div.droite{
+
+    float:left;
+    width: 20%;
+    margin-right: 100px
+ 
+
+}
+
+
+
+/* ------------- Étape #8 Gestion des balises reliées aux tables (ne pas modifier cette section) ------ */
+table,td, th {
+    border-collapse: collapse;
+    border: 2px solid teal;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+img {
+    height: 50px;
+}
+
+td {
+    padding: 0 15px;
+}
+/* -------------Étape #9  Gestion des balises reliées aux tables (ne pas modifier cette section) ------ */
+#wrapTrombi {
+    width: 1024px;
+    margin: 20px auto;
+}
+
+article.trombi {
+    border: 1px solid maroon;
+    display: inline-block;
+    width: 30%;
+    margin: 20px 5px;
+    padding: 5px;
+}
+
+article.trombi img {
+    float: left;
+    height: 100px;
+    margin: 0 10px;
+}
+
+article.trombi ul li {
+    list-style-type: none;
+}
+
+/* -------------Étape #10  Gestion des balises reliées aux tables (ne pas modifier cette section) ------ */
+input[type="submit"]{
+    width: 20%;
+    height:20%;
+    border:4px solid DarkOrange;
+    border-radius: 10px;
+    background:DarkBlue;
+    color: var(--blanc);
+
+}
+
+         
+/* ------------ Étape #11 : zone pour les appareils mobiles (ne pas modifier cette section)---------------------------------- */
+/*Dans le cadre d'utilisation d'un appareil mobile, 
+ dont la taille maximum de l'ecran est 700px la largeur du menu est 50%  */
+@media screen and (max-width: 700px) {
+    /*Dans le cadre d'utilisation d'un appareil mobile, on fixe le maximum de la taille de l'ecran pour le menu  */
+    nav li {
+        width: 50%;
+    }
+}
+/*Dans le cadre d'utilisation d'un appareil mobile, 
+dont  la taille  minimum de l'ecran est 800px la largeur du menu est 25%  */
+@media screen and (min-width: 800px) {
+    /*Dans le cadre d'utilisation d'un appareil mobile, on fixe le minimum de la taille de l'ecran pour le menu  */
+    nav li {
+        width: 25%;
+    }
+}
+/*Dans le cadre d'utilisation d'un appareil mobile, 
+dont  la taille  minimum de l'ecran est 940px la largeur du menu  est 20%  */
+@media screen and (min-width: 940px) {
+    nav li {
+        width: 20%;
+    }
+}
