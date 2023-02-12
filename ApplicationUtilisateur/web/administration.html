@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Administration</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="banniere">
+                <img id="logo" src="images/logo.png" alt="logo" />
+                <img id="informatique" src="images/DSC_0011.JPG" alt="Informatique" />
+                <h1>Département des Techniques de l'Informatique</h1>
+
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="index.html">Accueil</a></li>
+
+                        <li>
+                            <a
+                                href="utilisateur.html">Utilisateurs
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="inscription.html">Inscription
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="connexion.html">Connexion
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="">Quitter
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="administration.html">Administration
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+        </header>
+        <div>
+        
+            <div class="gauche">
+                `  <h4>Chercher un utilisateur par role</h4>
+
+                <form action="afficherEtudiant" method="get">
+
+                    <select name="role" id="role">
+                        <option value="Admin">Administrateur</option>
+                        <option value="Vendeur">Vendeur</option>
+                        <option value="Assistant">Assistant</option>
+                        <option value="Assistant">Editeur</option>
+                        <option value="Assistant">Expéditeur</option>
+                    </select>
+                    <input type="submit"  value="Role" />
+                </form>
+
+            </div>
+                <div class="center">
+              
+                <h4>Chercher un utilisateur par nom</h4>
+                <form action="afficherEtudiant" method="get"> 
+                    <input type="search" name="id">
+                    <input type="submit"  value="Nom" />
+                </form>
+            </div>
+
+         
+            <div class="droite">
+                <h4>Filter les utilisateurs par role</h4>
+                <input type="radio" name="admin" id="admin"/> <label>Administrateur </label> <br>
+                  <input type="radio" name="vendeur" id="vendeur"/> <label>Vendeur</label><br>
+                  <input type="radio" name="Assistant" id="Assistant"/> <label>Assistant</label> <br><!-- comment -->
+                  <input type="radio" name="Editeut" id="admin"/> <label>Editeut</label><br><!-- comment -->
+                  <input type="radio" name="Expéditeur" id="admin"/> <label>Expéditeur</label> <br><!-- comment -->
+                  
+        
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <h2>Liste des utilisateurs</h2>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Active</th>
+
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><img alt="photo smith" src="images/Will Smith.png"></td>
+                    <td>Will</td>
+                    <td>Smith</td>
+                    <td>willsmith@gmail.com</td>
+                    <td>Smith123</td>
+                    <td>Admin</td>
+                    <td>Oui</td>
+
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><img src="images/Allada Pavan.png" alt="Allada Pavan photo"></td>
+                    <td>Allada</td>
+                    <td>Pavan</td>
+                    <td>kanna.allada@gmail.com</td>
+                    <td>Pavan123</td>
+                    <td>Admin</td>
+                    <td>Oui</td>
+
+
+
+                <tr>
+                    <td>3</td>
+                    <td><img src="images/Bruce Kitchell.png" alt="Bruce Kitchell photo"></td>
+                    <td>Bruce</td>
+                    <td>Kitchell</td>
+                    <td>aecllc.bnk@gmail.com</td>
+                    <td>Kitchell123</td>
+                    <td>Vendeur</td>
+                    <td>Non</td>
+
+
+                </tr>
+                
+                <tr>
+                    <td>4</td>
+                    <td><img src="images/Muhammad Evran.png" alt="Muhammad Evran photo"></td>
+                    <td>Muhammad</td>
+                    <td>Evran</td>
+                    <td>muhammad.evran13@gmail.com</td>
+                    <td>Evran123</td>
+                    <td>Editeur</td>
+                    <td>Oui</td>
+
+                </tr>
+
+
+
+
+                <tr>   
+                    <td>5</td>
+                    <td><img src="images/KentHervey.png" alt="KentHervey photo"></td>
+                    <td>Kent</td>
+                    <td>Hervey</td>
+                    <td>kent.hervey8@gmail.com</td>
+                    <td>Hervey123</td>
+                    <td>Assistant</td>
+                    <td>Oui</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td><img src="images/Alfred.png" alt="Alfred photo"></td>
+                    <td>Alfred</td>
+                    <td>Ephraim</td>
+                    <td>alfredephraim26@gmail.com</td>
+                    <td>Ephraim123</td>
+                    <td>Editeur</td>
+                    <td>Non</td>
+
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td><img src="images/Nathi_Sangweni.png" alt="Nathi_Sangweni photo"></td>
+                    <td>Nathi</td>
+                    <td>Sangweni</td>
+                    <td>nathihsa@gmail.com</td>
+                    <td>Sangweni123</td>
+
+                    <td>Editeur</td>
+                    <td>Oui</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td><img src="images/Ammanolla.png" alt="Ammanolla photo"></td>
+                    <td>Ammanolla</td>
+                    <td>Shirisha</td>
+                    <td>ammanollashirisha2020@gmail.com</td>
+                    <td>Shirisha123</td>
+                    <td>Vendeur</td>
+                    <td>Oui</td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td>9</td>
+                    <td><img src="images/Bill Feeny.png" alt="Bill Feeny photo"></td>
+                    <td>Bill</td>
+                    <td>Feeny</td>
+                    <td>bfeeny238@hotmail.com</td>
+                    <td>Feeny123</td>
+                    <td>Vendeur</td>
+                    <td>Non</td>
+
+                </tr>
+                <tr> 
+                    <td>10</td>
+                    <td><img src="images/Frederick Santos.png" alt="Frederick Santos photo"></td>
+                    <td>Frederick</td>
+                    <td>Delos Santos</td>
+                    <td>redsantosph@gmail.com</td>
+                    <td>Santos123</td>
+                    <td>Editeur</td>
+                    <td>Oui</td>
+
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td><img src="images/Anna Maria.jpg" alt="Anna Maria"></td>
+                    <td>Ana</td>
+                    <td>Maria</td>
+                    <td>ro_anamaria@mail.ru</td>
+                    <td>Maria123</td>
+                    <td>Editeur</td>
+                    <td>Oui</td>
+
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><img src="images/Satya Narayana.png" alt="Satya Narayana photo"></td>
+                    <td>Satya</td>
+                    <td>Narayana</td>
+                    <td>maytassatya@hotmail.com</td>
+                    <td>Narayana123</td>
+                    <td>Expéditeur</td>
+                    <td>Non</td>
+
+                </tr>
+
+            </table>
+     </div>
+
+
+        <div>
+            <h2>Trombinoscope</h2>
+
+            <div id="wrapTrombi">
+
+                <article class = "trombi">
+                    <img alt="photo smith" src="images/Will Smith.png">
+                    <ul>
+
+                        <li>Will</li>
+                        <li>Smith</li>
+                        <li>willsmith@gmail.com</li>
+                        <li>Admin</li>
+                    </ul>
+                    <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Bruce Kitchell.png" alt="Bruce Kitchell photo">
+                    <ul>
+                        <li>Bruce</li>
+                        <li>Kitchell</li>
+                        <li>aecllc.bnk@gmail.com</li>
+                        <li>Vendeur</li>
+
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Muhammad Evran.png" alt="Muhammad Evran photo">
+                    <ul>
+                        <li>Muhammad</li>
+                        <li>Evran</li>
+                        <li>muhammad.evran13@gmail.com</li>
+                        <li>Editeur</li>
+
+
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Satya Narayana.png" alt="Satya Narayana photo">
+                    <ul>
+                        <li>Satya</li>
+                        <li>Narayana</li>
+                        <li>Narayana123</li>
+                        <li>Expéditeur</li>
+
+
+                    </ul>
+                      <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/KentHervey.png" alt="KentHervey photo">
+                    <ul>
+                        <li>Kent</li>
+                        <li>Hervey</li>
+                        <li>kent.hervey8@gmail.com</li>
+                        <li>Assistant</li>
+                    </ul>
+                   <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Alfred.png" alt="Alfred photo">
+                    <ul>
+                        <li>Alfred</li>
+                        <li>Ephraim</li>
+                        <li>alfredephraim26@gmail.com</li>
+                        <li>Editeur</li>
+
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Nathi_Sangweni.png" alt="Nathi_Sangweni photo">
+                    <ul>
+                        <li>Nathi</li>
+                        <li>Sangweni</li>
+                        <li>nathihsa@gmail.com</li>
+                        <li>Editeur</li>
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Ammanolla.png" alt="Ammanolla photo">
+                    <ul>
+                        <li>Ammanolla</li>
+                        <li>Shirisha</li>
+                        <li>ammanollashirisha2020@gmail.com</li>
+                        <li>Vendeur</li>
+
+
+                    </ul>
+                      <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Bill Feeny.png" alt="Bill Feeny photo">
+                    <ul>
+                        <li>Bill</li>
+                        <li>Feeny</li>
+                        <li>bfeeny238@hotmail.com</li>
+                        <li>Vendeur</li>
+
+
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+                <article class = "trombi">
+                    <img src="images/Frederick Santos.png" alt="Frederick Santos photo">
+                    <ul>
+                        <li>Frederick</li>
+                        <li>Delos Santos</li>
+                        <li>redsantosph@gmail.com</li>
+                        <li>Editeur</li>
+
+                    </ul>
+                       <form action="" method="get">
+                        <div      id="dialog" title="Dialog box">
+                            <input type="hidden" name="id" value="id"/>
+                        </div>
+                        <input type="submit" name="supprimer" value="Supprimer" style="width:70px"/>
+                        <input type="submit"  id="myButton" value="Modifier" /> 
+                    </form>
+                </article>
+
+            </div>
+              <form action="ajouterEtudiant.jsp" method="post">
+                    <center>
+                        <input type="submit"  value="Ajouter" /> 
+                    </center>
+
+                </form>
+        </div>
+        
+        <footer>
+
+            <div class="foot">
+
+                © 2023 Collège de Rosemont  Cours : Applications Web 2 – Tous droits réservés 
+            </div>
+        </footer>   
+    </body>
+</html>
